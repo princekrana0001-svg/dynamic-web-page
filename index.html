@@ -1,12 +1,53 @@
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>Dynamic Web Page</title>
 
-    <link rel="stylesheet" href="practical-15.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
 
-    <script src="practical-15.js" defer></script>
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #data {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        #data div {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ccc;
+        }
+
+        #data h3 {
+            margin: 0 0 8px;
+            color: #333;
+        }
+
+        #data p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        #myChart {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -18,13 +59,36 @@
     <canvas id="myChart"></canvas>
 
     <script>
+
+        const students = [
+            { name: "Prince", marks: 85 },
+            { name: "Omkar", marks: 72 },
+            { name: "Amit", marks: 90 }
+        ];
+
+        let output = "";
+
+        students.forEach(student => {
+
+            output += `
+                <div>
+                    <h3>${student.name}</h3>
+                    <p>Marks: ${student.marks}</p>
+                </div>
+            `;
+
+        });
+
+        document.getElementById("data").innerHTML = output;
+
+
         const ctx = document.getElementById("myChart");
 
         new Chart(ctx, {
             type: "bar",
 
             data: {
-                labels: ["Omkar", "Rahul", "Amit"],
+                labels: ["Prince", "Omkar", "Amit"],
 
                 datasets: [{
                     label: "Marks",
@@ -32,7 +96,9 @@
                 }]
             }
         });
+
     </script>
 
 </body>
+
 </html>
