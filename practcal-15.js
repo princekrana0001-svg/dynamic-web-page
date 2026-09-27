@@ -1,5 +1,5 @@
 const students = [
-    { name: "Omkar", marks: 85 },
+    { name: "Prince", marks: 85 },
     { name: "Rahul", marks: 72 },
     { name: "Amit", marks: 90 }
 ];
