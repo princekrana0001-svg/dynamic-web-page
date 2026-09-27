@@ -7,7 +7,6 @@ const students = [
 let output = "";
 
 students.forEach(student => {
-
     output += `
         <div>
             <h3>${student.name}</h3>
